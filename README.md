@@ -24,6 +24,8 @@ Testé dans Linux Mint 21
 
 **Comment exécuter ce script ?**
 
+*Remarque: vous devez installer ffmpeg : # apt install ffmpeg*
+
 1. Placer le script dans le même dossier du fichier vidéo à traiter.
 2. Ouvrir un terminal
 3. Taper la commande: *python3 "Exporter_section_vidéo.py"*
