@@ -1,4 +1,6 @@
-"""Le script demande d'abord à l'utilisateur de saisir le nom du fichier vidéo qu'il souhaite exporter. Ensuite, il demande à 
+""" Vous devez installer ffmpeg (apt install ffmpeg) en premier lieu
+
+Le script demande d'abord à l'utilisateur de saisir le nom du fichier vidéo qu'il souhaite exporter. Ensuite, il demande à 
 l'utilisateur d'entrer le temps de début et de fin de la section qu'il souhaite exporter en utilisant le format "hh:mm:ss.ms".
 
 Le script utilise ensuite la bibliothèque FFMpeg pour exporter la section spécifiée de la vidéo en MP4. La commande FFMpeg est 
