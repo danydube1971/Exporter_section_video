@@ -1,33 +1,63 @@
 # Exporter_section_video
-Permet d'exporter une section d'une vidéo au format MP4
 
-Le script demande d'abord à l'utilisateur de saisir le nom du fichier vidéo qu'il souhaite exporter. 
-Ensuite, il demande à l'utilisateur d'entrer le temps de début et de fin de la section qu'il souhaite 
-exporter en utilisant le format "hh:mm:ss.ms".
+Ce script permet d’exporter une section d’une vidéo défini par l’utilisateur. La section choisi sera enregistré au même endroit que la vidéo source. Le script ne réencode pas la vidéo ce qui accélère grandement le traitement.
 
-Le script utilise ensuite la bibliothèque FFMpeg pour exporter la section spécifiée de la vidéo en MP4. 
-La commande FFMpeg est appelée avec les arguments suivants :
+![Exporter_section_video](https://github.com/danydube1971/Exporter_section_video/assets/74633244/a33bef52-072f-4ff7-b3ca-452d01b1480a)
 
-1. -i : Spécifie le fichier d'entrée, c'est-à-dire la vidéo que l'utilisateur a saisie.
-2. -ss : Spécifie le temps de début de la section à exporter, qui est fourni par l'utilisateur.
-3. -to : Spécifie le temps de fin de la section à exporter, également fourni par l'utilisateur.
-4. -c : Spécifie le codec à utiliser pour l'exportation de la vidéo. Ici, nous utilisons l'option "copy" pour copier le flux vidéo et audio sans ré-encodage, 
-ce qui est plus rapide et conserve la qualité d'origine de la vidéo.
-5. output_file : Spécifie le nom du fichier de sortie pour la vidéo exportée. Dans ce cas, nous utilisons le nom du fichier d'entrée en remplaçant 
-l'extension par "_export.mp4".
+### Tester dans Linux Mint 21.3 sous Python 3.11
 
-Enfin, le script affiche un message de confirmation une fois que l'exportation est terminée.
+## Prérequis
 
-Testé dans Linux Mint 21
+Avant d'utiliser ce script, assurez-vous que les éléments suivants sont installés sur votre système :
 
----------------
+  • Python 3.11 ou version ultérieure : Vous pouvez télécharger Python depuis python.org.
+  
+  • PyQt5 : Bibliothèque pour créer des interfaces graphiques. Installez-le en utilisant la commande pip install PyQt5.
+  
+  • ffmpeg : Outil de traitement vidéo. Vous pouvez le télécharger et l'installer depuis ffmpeg.org.
 
-**Comment exécuter ce script ?**
+## Installation
 
-*Remarque: vous devez installer ffmpeg : # apt install ffmpeg*
+   1. Téléchargez le script : Téléchargez le fichier Exporter_section_vidéo_Qt5.py sur votre ordinateur.
+   2. Installez les dépendances :
+        ◦ Ouvrez une fenêtre de terminal ou de commande.
+        ◦ Exécutez les commandes suivantes pour installer les bibliothèques nécessaires :
+       `pip install PyQt5`
+      
+       `sudo apt-get install ffmpeg`
+      
+   3. Placez le script dans un répertoire approprié : Placez Exporter_section_vidéo_Qt5.py dans un répertoire où vous souhaitez l'exécuter.
 
-1. Placer le script dans le même dossier du fichier vidéo à traiter.
-2. Ouvrir un terminal
-3. Taper la commande: *python3 "Exporter_section_vidéo.py"*
+## Lancer l'application
+
+   1. Ouvrez une fenêtre de terminal ou de commande.
+   2. Naviguez jusqu'au répertoire contenant le script :
+       cd /chemin/vers/le/répertoire
+   3. Exécutez le script :
+       `python Exporter_section_vidéo_Qt5.py`
+   4. L'application s'ouvre : Une fenêtre intitulée "Exportateur de Section Vidéo" s'affiche.
+    
+## Sélectionner un fichier vidéo
+    
+  1. Cliquez sur le bouton "Choisir un fichier vidéo" : Une boîte de dialogue de sélection de fichiers apparaît.
+  2. Choisissez le fichier vidéo à traiter : Sélectionnez un fichier avec une extension .mkv, .mp4, .avi, ou .webm.
+  3. Durée de la vidéo affichée : L'application extrait la durée de la vidéo et l'affiche sous l'étiquette "Durée de la vidéo :".
+
+## Définir la section vidéo à exporter
+
+   1. Entrez le temps de début :
+        ◦ Dans le champ "Début de la vidéo: HH:MM
+          ", entrez le temps de début de la section que vous souhaitez extraire.
+   2. Entrez le temps de fin :
+        ◦ Dans le champ "Fin de la vidéo: HH:MM
+          ", entrez le temps de fin de la section que vous souhaitez extraire.
+        ◦ Assurez-vous que le temps de fin est supérieur au temps de début et ne dépasse pas la durée totale de la vidéo.
+
+## Exporter la section vidéo
+
+   1. Cliquez sur le bouton "Exporter la section vidéo" : L'application commence à traiter la vidéo.
+   2. Message de succès ou d'erreur :
+        ◦ Si l'exportation est réussie, un message de succès s'affiche avec le chemin du fichier exporté.
+        ◦ En cas d'erreur, un message détaillé s'affiche pour vous aider à identifier le problème.
 
 
