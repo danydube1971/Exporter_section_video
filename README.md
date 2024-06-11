@@ -4,7 +4,7 @@ Ce script permet d’exporter une section d’une vidéo défini par l’utilisa
 
 ![Exporter_section_video](https://github.com/danydube1971/Exporter_section_video/assets/74633244/a33bef52-072f-4ff7-b3ca-452d01b1480a)
 
-### Tester dans Linux Mint 21.3 sous Python 3.11
+*Tester dans Linux Mint 21.3 sous Python 3.11*
 
 ## Prérequis
 
